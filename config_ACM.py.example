@@ -1,0 +1,81 @@
+#!/usr/bin/env python 
+# -*- coding: utf-8 -*-
+# @Time    : 2020/8/4 22:38
+# @Author  : Raymound luo
+# @Mail    : luolinhao1998@gmail.com
+# @File    : config.py
+# @Software: PyCharm
+# @Describe:
+
+import os
+
+config_path = os.path.dirname(__file__)
+data_config = {
+    'data_path': os.path.join(config_path, 'data'),
+    'dataset': 'ACM',
+    'data_name': 'ACM.mat',
+    'primary_type': 'p',
+    'query_type': 'p',
+    'return_type': 'p',
+    'query_name':'',
+    'task': ['CL'],
+    'K_length': 3,
+    'resample': False,
+    'random_seed': 123,
+    'train_val_test_ratio': [0.25, 0.25, 0.5]
+}
+
+model_config = {
+    'primary_type': data_config['primary_type'],
+    'auxiliary_embedding': 'embedding',  # auxiliary embedding generating method: non_linear, linear, embedding
+    'K_length': data_config['K_length'],
+    'embedding_dim': 128,
+    'in_dim': 128,
+    'out_dim': 128,
+    'num_heads': 2,
+    'merge': 'mean',  # Multi head Attention merge method: linear, mean, stack
+    'g_agg_type': 'mean',  # Graph representation encoder: mean, sum
+    'drop_out': 0.3,
+    'cgnn_non_linear': True,  # Enable non linear activation function for CGNN
+    'multi_attn_linear': False,  # Enable atten K/Q-linear for each type
+    'graph_attention': True,
+    'kq_linear_out_dim': 128,
+    'path_attention': False,  # Enable Context path attention
+    'c_linear_out_dim': 8,
+    'enable_bilinear': False,  # Enable Bilinear for context attention
+    'enable_relational_passing': True,  # Enable Relational Message Passing
+    'gru': True,
+    'add_init': False,
+    'max_norm': 3.5
+}
+
+train_config = {
+    'continue': False,
+    'evaluate_every': -1,
+    'beta': 1,
+    'sup_weight': 1,
+    'unsup_weight': 0.8,
+    'lr': 0.001,
+    'l2': 0.01,
+    'factor': 0.2,
+    'total_epoch': 10000000,
+    'batch_size': 1024 * 20,
+    'pos_num_for_each_hop': [20, 20, 20, 20, 20, 20, 20, 20, 20],
+    'neg_num_for_each_hop': -1,
+    'sample_workers': 8,
+    'patience': 100,
+    'checkpoint_path': os.path.join(config_path, 'checkpoint', data_config['dataset'])
+}
+
+evaluate_config = {
+    'method': 'SpectralClustering',  # 'kmeans', 'kmedoids', 'AgglomerativeClustering', 'SpectralClustering'
+    'use_sim_matrix': True,
+    'save_heat_map': False,
+    'result_path': os.path.join('result', data_config['dataset']),
+    'random_state': 123,
+    'max_iter': 500,
+    'n_jobs': 1,
+    'n_time': 100,
+    'eval_time': 50,
+    'K': 10
+}

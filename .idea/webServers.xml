@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6ed0f9d8-8f3d-4b9b-8d14-0268176dafe2" name="ForGsim">
+        <fileTransfer rootFolder="/home/xcx/Gsim" accessType="SFTP" host="10.249.42.41" port="22" sshConfigId="7a651099-6a35-4812-8c88-f80ab45171f8" sshConfig="xcx@10.249.42.41:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
