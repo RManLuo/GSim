@@ -4,7 +4,7 @@
 
 Official code implementation for TKDE paper GSim: A Graph Neural Network Based Relevance Measure for Heterogeneous Graphs
 
-> L. Luo, Y. Fang, M. Lu, X. Cao, X. Zhang and W. Zhang, "GSim: A Graph Neural Network Based Relevance Measure for Heterogeneous Graphs," in IEEE Transactions on Knowledge and Data Engineering, doi: 10.1109/TKDE.2023.3271425.
+> L. Luo, Y. Fang, M. Lu, X. Cao, X. Zhang and W. Zhang, "GSim: A Graph Neural Network Based Relevance Measure for Heterogeneous Graphs," in IEEE Transactions on Knowledge and Data Engineering, doi: https://doi.org/10.1109/TKDE.2023.3271425.
 
 ## Environments
 
